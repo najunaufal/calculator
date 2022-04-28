@@ -34,67 +34,61 @@
             <button type="button" class="button botton2" onclick="clears()">C</button>
             <button type="button" class="button botton2" onclick="devide()">/</button>
             <button type="button" class="button botton2" onclick="calculateResult()">=</button>
-
-
-
         </div>
-
     </div>
 
     </div>
     <script type="text/javascript">
         lastCickedOperation = '';
         lastValue = '';
-
-
-        function show(numb) {
+         function show(numb) {
             textBox = document.getElementById("calculatorTextBox");
             currentValue = textBox.value;
             newValue = currentValue + numb;
             document.getElementById("calculatorTextBox").value = newValue;
         }
-        function clears(){
+        function clears() {
             document.getElementById("calculatorTextBox").value = '';
-         }
+        }
         function plus() {
             lastCickedOperation = '+';
-             lastValue = document.getElementById("calculatorTextBox").value;
+            lastValue = document.getElementById("calculatorTextBox").value;
             document.getElementById("calculatorTextBox").value = '';
         }
         function minus() {
             lastCickedOperation = '-';
             lastValue = document.getElementById("calculatorTextBox").value;
-        
-             document.getElementById("calculatorTextBox").value = ' ';
-         }
+
+            document.getElementById("calculatorTextBox").value = ' ';
+        }
         function multiple() {
             lastCickedOperation = "*"
             lastValue = document.getElementById("calculatorTextBox").value;
             document.getElementById("calculatorTextBox").value = ' ';
         }
-        function devide(){
+        function devide() {
             lastCickedOperation = "/"
             lastValue = document.getElementById("calculatorTextBox").value;
             document.getElementById("calculatorTextBox").value = ' ';
         }
-        function calculateResult () {
+        function calculateResult() {
             result = 0;
-            if(lastCickedOperation == '+'){
+            if (lastCickedOperation == '+') {
                 currentValue = document.getElementById("calculatorTextBox").value;
                 result = Number(lastValue) + Number(currentValue);
                 document.getElementById("calculatorTextBox").value = result;
             }
-            else if(lastCickedOperation == '-'){
+            else if (lastCickedOperation == '-') {
                 currentValue = document.getElementById("calculatorTextBox").value;
                 result = Number(lastValue) - Number(currentValue);
                 document.getElementById("calculatorTextBox").value = result;
             }
-            else if(lastCickedOperation == '*'){
+            else if (lastCickedOperation == '*') {
                 currentValue = document.getElementById("calculatorTextBox").value;
                 result = Number(lastValue) * Number(currentValue);
                 document.getElementById("calculatorTextBox").value = result;
             }
-            else if(lastCickedOperation == '/'){
+            else if (lastCickedOperation == '/') {
                 currentValue = document.getElementById("calculatorTextBox").value;
                 result = Number(lastValue) / Number(currentValue);
                 document.getElementById("calculatorTextBox").value = result;
